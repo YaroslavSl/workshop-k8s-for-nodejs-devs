@@ -10,5 +10,8 @@ kubectl apply -f k8s.yaml
 minikube service chat
 ```
 
-## Presentation:
+## Presentation
 https://docs.google.com/presentation/d/1PE6gl2TFk8izHWZ1XgTQSX2nIuA8I0S2WE2fvRSTvbQ/edit?usp=sharing
+
+## Course
+https://www.katacoda.com/learn
