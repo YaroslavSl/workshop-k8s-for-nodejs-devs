@@ -1,5 +1,6 @@
 import './setup';
 import * as http from './http-server';
+import * as redis from './redis';
 
 let isShutdownStarted = false;
 
@@ -8,6 +9,7 @@ async function shutdown(signal: NodeJS.Signals): Promise<void> {
   isShutdownStarted = true;
   console.log(`Received ${signal}. Shutdown started`);
   await http.close();
+  await redis.close();
   console.log('Server stopped');
 }
 

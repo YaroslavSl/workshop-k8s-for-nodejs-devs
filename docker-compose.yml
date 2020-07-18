@@ -14,3 +14,9 @@ services:
     image: galkin/k8s-server
     ports:
       - 3001:3001
+
+  redis:
+    container_name: redis
+    image: redis:6.0.5-alpine
+    ports:
+      - 6379:6379

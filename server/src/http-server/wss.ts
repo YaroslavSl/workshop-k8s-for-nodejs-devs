@@ -1,9 +1,12 @@
 import { parse } from 'url';
 import SocketIO from 'socket.io';
 import { EventTypes, MessageRequest, Message, User } from '../types';
+import { getRedisAdapter } from '../redis';
 
 const users = new Map<string, User>();
 export const wss: SocketIO.Server = SocketIO();
+const adapter = getRedisAdapter();
+wss.adapter(adapter);
 
 wss.on('connection', function (socket: SocketIO.Socket) {
   const { uuid, name } = parse(socket.request.url, true).query;
